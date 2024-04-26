@@ -1,0 +1,147 @@
+/* WRAPPER */
+.nav_wrapper {
+  background: rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(50px);
+}
+
+.nav_content {
+  justify-content: space-between;
+  max-width: 1300px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+}
+
+.nav_content ul {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.nav_content li {
+  margin: 0 1.5rem;
+}
+
+/* LOGO */
+.logo {
+  cursor: pointer;
+}
+
+/* LIST ITEMS */
+.list_item {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+}
+
+/* BACKDROP effect */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5); /* Цвет и прозрачность темного фона */
+  z-index: 998; /* Нужно, чтобы элемент backdrop находился под мобильным меню */
+}
+
+.list_item::before {
+  content: '';
+  width: 2rem;
+  height: 0.2rem;
+  background: linear-gradient(90deg, #a993fe 0%, #7e61e7 100%);
+  border-radius: 0.5rem;
+  position: absolute;
+  bottom: -0.6rem;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.list_item:hover::before {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* BUTTON CONTACT */
+.contact_btn {
+  background: linear-gradient(90deg, #a993fe 0%, #7e61e7 100%);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.contact_btn:hover {
+  color: #a993fe;
+  background: #000;
+  outline: 1.5px solid #a993fe;
+}
+
+/* BURGER MENU BUTTON */
+.burger_menu {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 0.5rem;
+  color: #fff;
+  background: linear-gradient(90deg, #a993fe 0%, #7e61e7 99.87%);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  line-height: 0;
+  display: none;
+}
+
+.burger_menu:hover {
+  background: none;
+  border: 1px solid #a993fe;
+}
+
+.hamburger_lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  width: 1.5rem;
+  height: 0.2rem;
+  background-color: #fff;
+  border-radius: 0.2rem;
+}
+
+/* MEDIA SCREEN FOR RESPONSIVE */
+
+@media screen and (max-width: 768px) {
+  .burger_menu {
+    display: block;
+  }
+
+  .nav_content ul {
+    display: none;
+  }
+
+  .nav_wrapper {
+    padding: 0 2rem;
+  }
+}

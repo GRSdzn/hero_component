@@ -17,21 +17,7 @@ const Hero = (props: Props) => {
         </div>
         <div className={s.hero_img}>
           <div>
-            <div className={s.hero_icon}>
-              <Image src={logo} alt="icon" width={80} height={80} />
-            </div>
-            <Image className={s.hero_poster} src={poster} alt="background" />
-          </div>
-          <div>
-            <div className={s.hero_icon}>
-              <Image src={logo} alt="icon" width={80} height={80} />
-            </div>
-            <div className={s.hero_icon}>
-              <Image src={logo} alt="icon" width={80} height={80} />
-            </div>
-            <div className={s.hero_icon}>
-              <Image src={logo} alt="icon" width={80} height={80} />
-            </div>
+            <Image placeholder="blur" loading="lazy" className={s.hero_poster} src={poster} alt="background" />
           </div>
         </div>
       </section>

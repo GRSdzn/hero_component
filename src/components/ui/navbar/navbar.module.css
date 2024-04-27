@@ -1,10 +1,11 @@
 /* WRAPPER */
 .nav_wrapper {
   background: rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 30;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(30px);
 }
 
 .nav_content {

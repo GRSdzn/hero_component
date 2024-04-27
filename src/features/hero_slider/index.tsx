@@ -1,33 +1,27 @@
 'use client';
-import { useState, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import s from './hero_slider.module.css';
 import Image from 'next/image';
 
 const HeroSlider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0); // определение состояния для текущего слайда
-  const imgs = ['/assets/image_poster.png', '/assets/image1.jpg', '/assets/image2.jpg']; // список изображений для слайдера
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const imgs = ['/assets/image_poster.png', '/assets/image1.jpg', '/assets/image2.jpg'];
 
   const handleSlideChange = useCallback(
     (newSlide: number) => {
-      setCurrentSlide((currentSlide + newSlide + imgs.length) % imgs.length); // функция для изменения текущего слайда с учетом границ
+      setCurrentSlide((currentSlide + newSlide + imgs.length) % imgs.length);
     },
     [currentSlide, imgs.length]
-  ); // оптимизация перерисовок функции
+  );
 
   return (
     <div className={s.hero_slider}>
-      {' '}
-      {/* контейнер для всего слайдера */}
       <div className={s.slider_container}>
-        {' '}
-        {/* контейнер для слайдов и кнопок */}
         <button className={`${s.arrow_button} ${s.arrow_button_left}`} onClick={() => handleSlideChange(-1)}>
-          &lt; {/* кнопка для перехода к предыдущему слайду */}
+          &lt;
         </button>
         <div className={s.hero_images}>
-          {/* контейнер для отображения изображений */}
           {[-1, 0, 1].map((indexOffset) => {
-            // отображение текущего, предыдущего и следующего изображений
             const index = (currentSlide + indexOffset + imgs.length) % imgs.length;
             const zIndex = indexOffset === 0 ? 2 : 1;
             const imageClass = indexOffset === 0 ? 'center' : indexOffset < 0 ? 'left' : 'right';
@@ -48,7 +42,7 @@ const HeroSlider = () => {
           })}
         </div>
         <button className={`${s.arrow_button} ${s.arrow_button_right}`} onClick={() => handleSlideChange(1)}>
-          &gt; {/* кнопка для перехода к следующему слайду */}
+          &gt;
         </button>
       </div>
     </div>

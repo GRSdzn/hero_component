@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import s from './hero_slider.module.css';
 import Image from 'next/image';
 
@@ -8,7 +8,7 @@ const HeroSlider = () => {
   const imgs = ['/assets/image_poster.png', '/assets/image1.jpg', '/assets/image2.jpg']; // список изображений для слайдера
 
   const handleSlideChange = useCallback(
-    (newSlide) => {
+    (newSlide: number) => {
       setCurrentSlide((currentSlide + newSlide + imgs.length) % imgs.length); // функция для изменения текущего слайда с учетом границ
     },
     [currentSlide, imgs.length]

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import s from './mobile_bar.module.css';
-import logo from '@/assets/logo.svg';
+import logo from '@/../public/assets/logo.svg';
+
 import Image from 'next/image';
 import { page_links } from '@/mock/links';
 type Props = {

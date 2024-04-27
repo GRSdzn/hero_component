@@ -2,7 +2,7 @@
 import s from './navbar.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from '@/assets/logo.svg';
+import logo from '@/../public/assets/logo.svg';
 import { useState } from 'react';
 import MobileNavBar from './mobile/mobile_bar';
 import { page_links } from '@/mock/links';
